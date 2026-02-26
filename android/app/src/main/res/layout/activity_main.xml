@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D12"
+    tools:context=".MainActivity">
+
+    <!-- Particle 3D View (Full Screen Background) -->
+    <com.example.handparticle.particle.ParticleGLSurfaceView
+        android:id="@+id/particleGLView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Control Panel (Top Left) -->
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp"
+        android:background="@drawable/panel_background"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header with Toggle Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="✨ Hand Particle"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Toggle Button -->
+            <TextView
+                android:id="@+id/togglePanelBtn"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/toggle_button_background"
+                android:gravity="center"
+                android:text="▲"
+                android:textColor="#A5B4FC"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Collapsible Content -->
+        <LinearLayout
+            android:id="@+id/collapsibleContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+        <!-- Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/status_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:id="@+id/statusDot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/status_dot_inactive" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Đang khởi tạo..."
+                android:textColor="#AAAAAA"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Gesture Display -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gesture_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/gestureIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👋"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/gestureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Đưa tay vào camera"
+                android:textColor="#A5B4FC"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Color Picker -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MÀU SẮC"
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:id="@+id/colorPurple"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_purple" />
+
+            <View
+                android:id="@+id/colorBlue"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_blue" />
+
+            <View
+                android:id="@+id/colorCyan"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_cyan" />
+
+            <View
+                android:id="@+id/colorGreen"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_green" />
+
+            <View
+                android:id="@+id/colorYellow"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_yellow" />
+
+            <View
+                android:id="@+id/colorOrange"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_orange" />
+
+            <View
+                android:id="@+id/colorPink"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_pink" />
+
+            <View
+                android:id="@+id/colorWhite"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/color_swatch_white" />
+        </LinearLayout>
+
+        <!-- Particle Count Slider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SỐ LƯỢNG HẠT"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:id="@+id/particleCountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500"
+                android:textColor="#A5B4FC"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/particleSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="1000"
+            android:progress="500"
+            android:progressTint="#6366F1"
+            android:thumbTint="#8B5CF6"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Instructions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/instructions_background"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hướng dẫn"
+                android:textColor="#A5B4FC"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🖐️ Xòe tay → Mở rộng hạt"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✊ Nắm tay → Thu gọn thành cầu"
+                android:textColor="#888888"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        </LinearLayout> <!-- End collapsibleContent -->
+
+    </LinearLayout>
+
+    <!-- FPS Counter (Top Right) -->
+    <TextView
+        android:id="@+id/fpsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:background="@drawable/fps_background"
+        android:padding="8dp"
+        android:text="FPS: --"
+        android:textColor="#22C55E"
+        android:textSize="12sp"
+        android:fontFamily="monospace" />
+
+    <!-- Camera Preview (Bottom Right - Small) -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="180dp"
+        android:layout_height="135dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#000000">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/cameraPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleX="-1" />
+
+        <!-- Camera label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="8dp"
+            android:background="@drawable/camera_label_background"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="📷 Camera"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

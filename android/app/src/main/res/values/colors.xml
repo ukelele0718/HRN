@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#BBDEFB</color>
+    <color name="purple_500">#6366F1</color>
+    <color name="purple_700">#4F46E5</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- App Colors -->
+    <color name="background_dark">#0D0D12</color>
+    <color name="panel_background">#14141E</color>
+    <color name="accent_purple">#6366F1</color>
+    <color name="accent_violet">#8B5CF6</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A5B4FC</color>
+    <color name="text_muted">#888888</color>
+    
+    <!-- Particle Colors -->
+    <color name="particle_purple">#9966FF</color>
+    <color name="particle_blue">#4D80FF</color>
+    <color name="particle_cyan">#4DE6E6</color>
+    <color name="particle_green">#4DE680</color>
+    <color name="particle_yellow">#FFE64D</color>
+    <color name="particle_orange">#FF9933</color>
+    <color name="particle_pink">#FF66B2</color>
+    <color name="particle_white">#FFFFFF</color>
+    
+    <!-- Status Colors -->
+    <color name="status_active">#22C55E</color>
+    <color name="status_inactive">#EF4444</color>
+</resources>

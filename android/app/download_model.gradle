@@ -1,0 +1,40 @@
+// Task to download MediaPipe hand landmarker model
+task downloadHandLandmarkerModel {
+    def modelUrl = 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task'
+    def modelFile = file("${projectDir}/src/main/assets/hand_landmarker.task")
+    
+    doLast {
+        if (!modelFile.exists()) {
+            modelFile.parentFile.mkdirs()
+            println "Downloading hand_landmarker.task..."
+            new URL(modelUrl).withInputStream { i ->
+                modelFile.withOutputStream { it << i }
+            }
+            println "Download complete: ${modelFile.absolutePath}"
+        } else {
+            println "Model already exists: ${modelFile.absolutePath}"
+        }
+    }
+}
+
+// Task to download MediaPipe pose landmarker model
+task downloadPoseLandmarkerModel {
+    def modelUrl = 'https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task'
+    def modelFile = file("${projectDir}/src/main/assets/pose_landmarker_lite.task")
+    
+    doLast {
+        if (!modelFile.exists()) {
+            modelFile.parentFile.mkdirs()
+            println "Downloading pose_landmarker_lite.task..."
+            new URL(modelUrl).withInputStream { i ->
+                modelFile.withOutputStream { it << i }
+            }
+            println "Download complete: ${modelFile.absolutePath}"
+        } else {
+            println "Model already exists: ${modelFile.absolutePath}"
+        }
+    }
+}
+
+preBuild.dependsOn downloadHandLandmarkerModel
+preBuild.dependsOn downloadPoseLandmarkerModel

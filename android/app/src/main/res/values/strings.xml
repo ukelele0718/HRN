@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Hand Particle</string>
+    <string name="permission_camera_rationale">Ứng dụng cần quyền camera để nhận diện cử chỉ tay</string>
+</resources>
